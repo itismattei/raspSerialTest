@@ -9,6 +9,7 @@
 #define TxRxCMD_H_
 
 #include "SerialComm.h"
+#include <stdint.h>
 
 /*
  *
@@ -38,6 +39,7 @@ public:
 	void sendCmd(char, int);
 
 	int receiveCmd();
+	int convertiDatoRaw();
 
 	/// buffer di trasmissione del comando
 	char txBuff[128];

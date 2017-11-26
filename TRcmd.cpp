@@ -230,3 +230,18 @@ int TxRxcmd::receiveCmd(void){
 	return (int)isOK;
 
 }
+
+///
+///
+int TxRxcmd::convertiDatoRaw(){
+
+	int16_t valore;
+	/// controlla se l'ultima transazione e' andata a buon fine
+	if (isOK){
+		/// il formato del dato e':
+		/// rxbuff[1] << 8 + rxbuff[2]
+		valore = (rxBuff[1] & 0xFF) << 8;
+		valore += rxBuff[2] & 0xFF;
+	}
+	return (int)valore;		
+}

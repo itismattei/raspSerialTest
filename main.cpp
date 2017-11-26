@@ -90,21 +90,74 @@ int main(){
 		++contatore;
 		int j;
 		/// stampa i bytes che inviera'
-		printf("%d invio il comando 'D' 1\n", contatore);
-		
-//		/// invia 5 caratteri
-//		uart.writeBuff(buff, 5);
-//		/// uaggiunge il carattere di new line (\n)
-//		uart.writeBuff(buff1, 1);
+		printf("%d invio il comando 'D' 1 ", contatore);
+
+		/* 1 */
 		PIPE.sendCmd('D', 1);
-		/// attende 10 ms
+		/// attende 5 ms
 		nextTime = millis () + 10 ;
 		while(millis() < nextTime);
 		/// legge il buffer di ricezione e memorizza i bytes disponibili
 		j = PIPE.receiveCmd();
+		if (j)
+			printf("%d\n", PIPE.convertiDatoRaw());
 
+		/* 2 */
+		printf("%d invio il comando 'D' 2 ", contatore);
+		PIPE.sendCmd('D', 2);
+		/// attende 5 ms
+		nextTime = millis () + 10 ;
+		while(millis() < nextTime);
+		/// legge il buffer di ricezione e memorizza i bytes disponibili
+		j = PIPE.receiveCmd();
+		if (j)
+			printf("%d\n", PIPE.convertiDatoRaw());
 
+		/* 3 */
+		printf("%d invio il comando 'D' 3 ", contatore);
+		PIPE.sendCmd('D', 3);
+		/// attende 5 ms
+		nextTime = millis () + 10 ;
+		while(millis() < nextTime);
+		/// legge il buffer di ricezione e memorizza i bytes disponibili
+		j = PIPE.receiveCmd();
+		if (j)
+			printf("%d\n", PIPE.convertiDatoRaw());
 		
+		/* 4 */
+		printf("%d invio il comando 'D' 4 ", contatore);
+		PIPE.sendCmd('D', 4);
+		/// attende 5 ms
+		nextTime = millis () + 10 ;
+		while(millis() < nextTime);
+		/// legge il buffer di ricezione e memorizza i bytes disponibili
+		j = PIPE.receiveCmd();
+		if (j)
+			printf("%d\n", PIPE.convertiDatoRaw());
+		
+		/* 5 */
+		printf("%d invio il comando 'D' 5 ", contatore);
+		PIPE.sendCmd('D', 5);
+		/// attende 5 ms
+		nextTime = millis () + 10 ;
+		while(millis() < nextTime);
+		/// legge il buffer di ricezione e memorizza i bytes disponibili
+		j = PIPE.receiveCmd();
+		if (j)
+			printf("%d\n", PIPE.convertiDatoRaw());
+		
+		/* 6 giroscopio */
+		printf("----\n%d invio il comando 'D' 6 ", contatore);
+		PIPE.sendCmd('D', 6);
+		/// attende 5 ms
+		nextTime = millis () + 10 ;
+		while(millis() < nextTime);
+		/// legge il buffer di ricezione e memorizza i bytes disponibili
+		j = PIPE.receiveCmd();
+		if (j)
+			printf("%d\n", PIPE.convertiDatoRaw());
+		
+		printf("*** ***\n");
 		sleep(1);
 	}
 
