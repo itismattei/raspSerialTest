@@ -1,8 +1,8 @@
 /*
  * questo programma permette di testare la classe SerialComm.
  * Essa permette di usare la comunicazione seriale UART della
- * rapsberry. La modalita' di test è in loopback.
- * 
+ * rapsberry. La modalita' di test è in chiamata con la MCU.
+ * SI leggono i sensori dal numero 1 al numero 6
  */
 
 
